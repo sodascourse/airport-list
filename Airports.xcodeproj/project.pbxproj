@@ -44,6 +44,9 @@
 		FED556761CA2EEB500FD7C86 /* TPE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FED556551CA2EEB500FD7C86 /* TPE.jpg */; };
 		FED556771CA2EEB500FD7C86 /* YVR.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FED556561CA2EEB500FD7C86 /* YVR.jpg */; };
 		FED556781CA2EEB500FD7C86 /* YYZ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FED556571CA2EEB500FD7C86 /* YYZ.jpg */; };
+		FED5567A1CA2EED300FD7C86 /* AirportsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED556791CA2EED300FD7C86 /* AirportsData.swift */; };
+		FED5567C1CA2F04100FD7C86 /* AirportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED5567B1CA2F04100FD7C86 /* AirportsListViewController.swift */; };
+		FED5567E1CA2F05C00FD7C86 /* AirportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED5567D1CA2F05C00FD7C86 /* AirportDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		FED556551CA2EEB500FD7C86 /* TPE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TPE.jpg; sourceTree = "<group>"; };
 		FED556561CA2EEB500FD7C86 /* YVR.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YVR.jpg; sourceTree = "<group>"; };
 		FED556571CA2EEB500FD7C86 /* YYZ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YYZ.jpg; sourceTree = "<group>"; };
+		FED556791CA2EED300FD7C86 /* AirportsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportsData.swift; sourceTree = "<group>"; };
+		FED5567B1CA2F04100FD7C86 /* AirportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportsListViewController.swift; sourceTree = "<group>"; };
+		FED5567D1CA2F05C00FD7C86 /* AirportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 			children = (
 				FED555F41CA2EE8600FD7C86 /* Data */,
 				FED555E11CA2ED2E00FD7C86 /* AppDelegate.swift */,
+				FED556791CA2EED300FD7C86 /* AirportsData.swift */,
+				FED5567B1CA2F04100FD7C86 /* AirportsListViewController.swift */,
+				FED5567D1CA2F05C00FD7C86 /* AirportDetailViewController.swift */,
 				FED555E51CA2ED2E00FD7C86 /* Main.storyboard */,
 				FED555E81CA2ED2E00FD7C86 /* Assets.xcassets */,
 				FED555EA1CA2ED2E00FD7C86 /* LaunchScreen.storyboard */,
@@ -292,7 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED5567C1CA2F04100FD7C86 /* AirportsListViewController.swift in Sources */,
+				FED5567E1CA2F05C00FD7C86 /* AirportDetailViewController.swift in Sources */,
 				FED555E21CA2ED2E00FD7C86 /* AppDelegate.swift in Sources */,
+				FED5567A1CA2EED300FD7C86 /* AirportsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.sodas.Airports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -422,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.sodas.Airports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
