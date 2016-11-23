@@ -17,28 +17,30 @@ class AirportDetailViewController: UIViewController {
 
     var airport: Airport? {
         didSet {
-            self.updateValues()
+            // Update when the model is changed.
+            self.updateLablesAndImages()
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateValues()
+        // Update when the view is loaded.
+        self.updateLablesAndImages()
     }
 
-    func updateValues() {
-        guard self.isViewLoaded() else {
+    func updateLablesAndImages() {
+        // If the view is not loaded yet, don't update
+        guard self.isViewLoaded else {
             return
         }
+        self.airportNameLabel.text = self.airport?.name
+        self.countryLabel.text = self.airport?.countryName
+        self.cityLabel.text = self.airport?.servedCity
 
-        self.airportNameLabel.text = airport?.name
-        self.countryLabel.text = airport?.countryName
-        self.cityLabel.text = airport?.servedCity
-
-        if let imagePath = airport?.imagePath {
-            self.imageView.image = UIImage(contentsOfFile: imagePath)
-        } else {
-            self.imageView.image = nil
+        var image: UIImage? = nil
+        if let imageName = self.airport?.imageName {
+             image = UIImage(named: imageName)
         }
+        self.imageView.image = image
     }
 }
