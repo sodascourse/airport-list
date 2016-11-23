@@ -33,10 +33,16 @@ class AirportDetailViewController: UIViewController {
         guard self.isViewLoaded else {
             return
         }
+
+        // Update title of the navigation bar
+        self.navigationItem.title = self.airport?.IATA
+
+        // Update labels
         self.airportNameLabel.text = self.airport?.name
         self.countryLabel.text = self.airport?.countryName
         self.cityLabel.text = self.airport?.servedCity
 
+        // Update images
         var image: UIImage? = nil
         if let imageName = self.airport?.imageName {
              image = UIImage(named: imageName)
