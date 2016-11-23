@@ -4,6 +4,90 @@
 <array>
 	<dict>
 		<key>Airport</key>
+		<string>Munich Airport</string>
+		<key>Country</key>
+		<string>Germany</string>
+		<key>IATA</key>
+		<string>MUC</string>
+		<key>Image</key>
+		<string>MUC.jpg</string>
+		<key>ServedCity</key>
+		<string>Munich</string>
+		<key>ShortName</key>
+		<string>Munich Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
+		<string>Kuala Lumpur International Airport</string>
+		<key>Country</key>
+		<string>Malaysia</string>
+		<key>IATA</key>
+		<string>KUL</string>
+		<key>Image</key>
+		<string>KUL.jpg</string>
+		<key>ServedCity</key>
+		<string>Kuala Lumpur</string>
+		<key>ShortName</key>
+		<string>Kuala Lumpur Int'l Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
+		<string>Washington Dulles International Airport</string>
+		<key>Country</key>
+		<string>United States</string>
+		<key>IATA</key>
+		<string>IAD</string>
+		<key>Image</key>
+		<string>IAD.jpg</string>
+		<key>ServedCity</key>
+		<string>Washington D.C.</string>
+		<key>ShortName</key>
+		<string>Washington Dulles Int'l Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
+		<string>George Bush Intercontinental Airport</string>
+		<key>Country</key>
+		<string>United States</string>
+		<key>IATA</key>
+		<string>IAH</string>
+		<key>Image</key>
+		<string>IAH.jpg</string>
+		<key>ServedCity</key>
+		<string>Houston</string>
+		<key>ShortName</key>
+		<string>George Bush Int'l Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
+		<string>Chicago O'Hare International Airport</string>
+		<key>Country</key>
+		<string>United States</string>
+		<key>IATA</key>
+		<string>ORD</string>
+		<key>Image</key>
+		<string>ORD.jpg</string>
+		<key>ServedCity</key>
+		<string>Chicago</string>
+		<key>ShortName</key>
+		<string>O'Hare Int'l Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
+		<string>Taipei Songshan Airport</string>
+		<key>Country</key>
+		<string>Taiwan</string>
+		<key>IATA</key>
+		<string>TSA</string>
+		<key>Image</key>
+		<string>TSA.jpg</string>
+		<key>ServedCity</key>
+		<string>Taipei</string>
+		<key>ShortName</key>
+		<string>Songshan Airport</string>
+	</dict>
+	<dict>
+		<key>Airport</key>
 		<string>Sydney Airport</string>
 		<key>Country</key>
 		<string>Australia</string>
