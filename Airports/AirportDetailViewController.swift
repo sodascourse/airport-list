@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Async
 
 class AirportDetailViewController: UIViewController {
 
@@ -43,10 +45,23 @@ class AirportDetailViewController: UIViewController {
         self.cityLabel.text = self.airport?.servedCity
 
         // Update images
-        var image: UIImage? = nil
         if let imageName = self.airport?.imageName {
-             image = UIImage(named: imageName)
+            let imageUrl = URL(string: "https://course.sodas.tw/assets/airports/\(imageName)")!
+            /*
+            let data = try! Data(contentsOf: imageUrl)
+            self.imageView.image = UIImage(data: data)
+            */
+            /*
+            Async.userInteractive { () -> UIImage? in
+                guard let data = try? Data(contentsOf: imageUrl) else {
+                    return nil
+                }
+                return UIImage(data: data)
+            }.main { image in
+                self.imageView.image = image
+            }
+            */
+            self.imageView.af_setImage(withURL: imageUrl)
         }
-        self.imageView.image = image
     }
 }

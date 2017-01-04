@@ -10,7 +10,16 @@ import UIKit
 
 class AirportsListViewController: UITableViewController {
 
-    var airportsData: AirportsSource = AirportsSource.default
+    var airportsData = AirportsSource()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.airportsData.fetchFromNetwork { success in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Table View Data Source
 

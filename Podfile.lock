@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (4.2.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - AsyncSwift (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.1)
+  - AsyncSwift (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+
+PODFILE CHECKSUM: 29ca8a44004b0a8fb3d4dbc4bb2e82ffe96a32cc
+
+COCOAPODS: 1.1.1

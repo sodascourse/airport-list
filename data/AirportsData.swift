@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import Alamofire
+import Async
 
 // MARK: Properties
 // ---------------------------------------------------------------------------------------------------------------------
 
-struct AirportsSource {
-    let countries: [Country]
+class AirportsSource {
+    var countries: [Country]
+
+    init(countries: [Country] = []) {
+        self.countries = countries
+    }
 }
 
 struct Country {
@@ -27,6 +33,30 @@ struct Airport {
     let servedCity: String
     let shortName: String
     let imageName: String
+}
+
+extension AirportsSource {
+    func fetchFromNetwork(with completionHandler: @escaping (_ success: Bool) -> Void) {
+        let url = "https://course.sodas.tw/assets/airports/data.json"
+        Alamofire.request(url).responseJSON { response in
+            Async.userInteractive { () -> [Country]? in
+                sleep(1)
+                guard let JSON = response.result.value as? [[String: Any]] else {
+                    return nil
+                }
+                guard let countries = try? AirportsSource.organize(airportsDict: JSON) else {
+                    return nil
+                }
+                return countries
+            }.main { (countries: [Country]?) in
+                let success = countries != nil
+                if success {
+                    self.countries = countries!
+                }
+                completionHandler(success)
+            }
+        }
+    }
 }
 
 // MARK: - Loaders
@@ -77,12 +107,16 @@ enum AirportsSourceErrorType: Error {
 
 extension AirportsSource {
 
-    init(contentsOfFile path: String) throws {
+    convenience init(contentsOfFile path: String) throws {
         // Read plist into arrray of dictionaries
         guard let airportDictionaries = NSArray(contentsOfFile: path) as? [[String: Any]] else {
             throw AirportsSourceErrorType.fileNotFound
         }
+        let countries = try AirportsSource.organize(airportsDict: airportDictionaries)
+        self.init(countries: countries)
+    }
 
+    static func organize(airportsDict airportDictionaries: [[String: Any]]) throws -> [Country] {
         // Create a dictionary which keys are contry name and values are airports list
         var dictOfCountryAndAirports = [String: [Airport]]()
         for airportDict in airportDictionaries {
@@ -108,25 +142,8 @@ extension AirportsSource {
             countries.append(country)
         }
         // Sort countries by their name
-        self.countries = countries.sorted { (countryA: Country, countryB: Country) -> Bool in
+        return countries.sorted { (countryA: Country, countryB: Country) -> Bool in
             return countryA.name < countryB.name
         }
     }
-}
-
-// MARK: - Default content
-// ---------------------------------------------------------------------------------------------------------------------
-
-extension AirportsSource {
-    private static func loadDefaultSource() -> AirportsSource {
-        // Get default plist from the Bundle
-        let dataPath = Bundle.main.path(forResource: "airports", ofType: "plist")!
-        // Create the source
-        guard let source = try? AirportsSource(contentsOfFile: dataPath) else {
-            fatalError()
-        }
-        return source
-    }
-
-    static let `default`: AirportsSource = loadDefaultSource()
 }
